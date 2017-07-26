@@ -1,0 +1,54 @@
+@import '~less/variables.less';
+
+.header__auctions-toggle {
+    text-align: left;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+
+    &__link {
+        line-height: 1;
+        font-size: 16px;
+        color: @gray-light;
+        position: relative;
+        padding: 0 @grid-margin/2;
+        cursor: pointer;
+        text-decoration: none;
+        margin-left: @grid-margin*2;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+
+        &--prizes {
+            background-image: url('./assets/trophy.svg');
+            background-repeat: no-repeat;
+            background-position: 0 center;
+            background-size: auto 16px;
+            padding-left: 20px;
+
+            &.active {
+              &::after {
+                background-color: @red !important;
+                box-shadow: 0 -1px 4px 0 fade(@red, 50%) !important;
+              }
+            }
+        }
+
+        &.active {
+            color: white;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -23px;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background-color: @blue;
+                box-shadow: 0 -1px 4px 0 fade(@blue, 50%);
+                transition: background-color .3s ease-in-out;
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+@import '~less/variables.less';
+
+.footer {
+    left: 0; right: 0;
+    background: @brand-gray;
+    position: absolute;
+    bottom: 0;
+    height: @footer-height;
+    z-index: 15;
+    box-shadow: 0 -4px 4px 0 rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    padding: 8px @grid-margin 12px @grid-margin;
+    color: @gray-light;
+    font-weight: 400;
+
+    &__share {
+        float: left;
+
+        &__btn {
+            width: 110px;
+            background-image: url('./assets/ic-share-white-24-px.svg');
+            background-repeat: no-repeat;
+            background-position: 20px center;
+            background-size: 18px auto;
+            padding-left: 18px+14px;
+            margin-right: @grid-margin;
+        }
+    }
+
+    &__apps {
+        float: right;
+
+        >span {
+            line-height: 40px;
+            vertical-align: top;
+        }
+
+        &__btn {
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            margin-left: @grid-margin;
+
+            &--apple {
+                background-image: url('./assets/apple.png')
+            }
+
+            &--google {
+                background-image: url('./assets/google.png')
+            }
+        }
+    }
+}

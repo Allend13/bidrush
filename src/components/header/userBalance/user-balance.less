@@ -1,0 +1,23 @@
+@import '~less/variables.less';
+
+.header__user-balance {
+    @line-height: 18px;
+    margin-right: @grid-margin*1.5;
+    font-size: @line-height;
+    line-height: @line-height;
+    float: left;
+    vertical-align: middle;
+    font-weight: 300;
+
+    &__btn {
+        width: @line-height;
+        height: @line-height;
+        position: relative;
+        margin-left: @grid-margin/2;
+        vertical-align: top;
+    }
+
+    >.icon {
+        margin-right: @grid-margin/2;
+    }
+}

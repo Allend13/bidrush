@@ -1,0 +1,17 @@
+version: 0.0
+os: linux
+files:
+  - source: build/
+    destination: /var/www/bidwingame-user
+  - source: user.nginx.conf
+    destination: /etc/nginx/conf.d
+permissions:
+  - object: /var/www/bidwingame-user
+    pattern: "**"
+    owner: www-data
+    group: www-data
+hooks:
+  ApplicationStart:
+    - location: deploy/start.sh
+      timeout: 300
+      runas: root

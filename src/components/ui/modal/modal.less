@@ -1,0 +1,63 @@
+ @import '~less/variables.less';
+
+.modal {
+    position: absolute;
+    left: 0; right: 0;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background-color: rgba(0, 0, 0, 0.75);
+        z-index: -5;
+        animation: modalAnimate .2s ease-in-out;
+    }
+
+    &__close {
+        position: absolute;
+        right: @grid-margin/2;
+        top: @grid-margin/2;
+        transition: opacity 0.15s ease-out;
+        z-index: 15;
+
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+
+    &__body {
+        position: relative;
+        color: white;
+        min-height: 100px;
+        background-color: @brand-gray;
+        border-radius: @base-border-radius;
+        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.6), 0 5px 14px 0 rgba(0, 0, 0, 0.22);
+        padding: @grid-margin*2 @grid-margin/2;
+        animation: modalBodyAnimate .3s ease-in-out;
+
+        &--loading {
+          box-shadow: none;
+          min-width: 100px;
+          background-color: transparent;
+          padding: 0;
+          border-radius: 0;
+        }
+    }
+}
+
+@keyframes modalAnimate {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes modalBodyAnimate {
+  0%   { transform: perspective(1000px) rotateX(90deg); }
+  100% { transform: none;; }
+}

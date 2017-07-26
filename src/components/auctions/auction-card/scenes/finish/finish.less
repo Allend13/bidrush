@@ -1,0 +1,191 @@
+@import '~less/variables.less';
+
+.auction-card__finish {
+
+    &__modal {
+      background-color: transparent;
+      box-shadow: none;
+
+      .modal__close {
+          display: none;
+      }
+    }
+
+    &--looser {
+      width: 495px;
+    }
+
+    &--winner {
+        width: 300px;
+        height: 448px;
+        background-color: white;
+        border-radius: @base-border-radius;
+        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.6), 0 5px 14px 0 rgba(0, 0, 0, 0.22);
+        background-position: center 42px;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        margin-top: -50px/2;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: 5;
+            width: 100%;
+            height: 87px;
+            top: -30px;
+            background-position: center center;
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 5;
+            width: 100%;
+            height: 112px;
+            bottom: 0;
+            background-position: center center;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+        }
+
+        .btn {
+          position: absolute;
+          bottom: -50px;
+          left: 0;
+          width: 100%;
+          font-size: 14px;
+          font-weight: 300;
+        }
+    }
+
+    &__prize-icon {
+        position: absolute;
+        z-index: 10;
+        bottom: @grid-margin*1.5;
+        width: 100%;
+        height: 150px;
+        background-image: url('./assets/group-3.svg');
+        background-position: center center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+
+    }
+
+    &--tokens {
+        &:before {
+            background-image: url('./assets/win-fun-not@2x.png');
+        }
+        &:after {
+            background-image: url('./assets/bg-blue.svg');
+        }
+    }
+
+    &--credits {
+        &:before {
+            background-image: url('./assets/win-not@2x.png');
+        }
+        &:after {
+            background-image: url('./assets/bg-red.svg');
+        }
+    }
+
+    &__header {
+      width: 100%;
+      margin-top: -@grid-margin*2;
+      height: 50px;
+      line-height: 50px;
+      font-size: 18px;
+      font-family: @lato;
+      color: white;
+      vertical-align: middle;
+      padding-left: 10px;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.5), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    .auction-card__party {
+      padding: @grid-margin/2;
+      flex-direction: row;
+      max-height: none;
+
+      &__player {
+        width: calc(~'50% -' @grid-margin/2);
+        height: 45px;
+        padding: @grid-margin/2 @grid-margin;
+        margin-bottom: @grid-margin/2;
+        background-color: @brand-gray-dark;
+        color: white;
+        border-radius: @base-border-radius;
+
+        &__img {
+          width: 35px;
+          height: 35px;
+          border: none;
+        }
+
+        &__name {
+          font-size: 14px;
+          font-weight: 300;
+        }
+
+        &:first-of-type {
+          width: 100%;
+          height: auto;
+          padding: @grid-margin 0;
+          justify-content: center;
+          background-color: transparent;
+          border-bottom: 1px solid #394750;
+          border-radius: 0;
+
+          &:after {
+            height: 35px;
+            content: 'WINNER';
+            position: static;
+            font-size: 14px;
+            margin-left: @grid-margin*2;
+            color: @blue;
+            padding-right: 45px;
+            background: url('./assets/group-2.svg') no-repeat right center;
+            background-size: auto 100%;
+            align-self: stretch;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 7px;
+          }
+
+          .auction-card__party__player__img {
+            @bg-offset: @grid-margin/2 + 1;
+            width: 30px;
+            height: 30px;
+            margin-left: @bg-offset/2;
+            margin-right: @bg-offset;
+            background-size: 30px auto;
+            position: relative;
+
+            &:before {
+              content: '';
+              position: absolute;
+              left: -@bg-offset; right: -@bg-offset;
+              top: -@bg-offset; bottom: -@bg-offset;
+              z-index: 5;
+              margin-left: 0.5px;
+              margin-top: -1px;
+              background: url('./assets/group-24.svg') no-repeat center center;
+              background-size: 100% auto;
+            }
+
+            &:after {
+              display: none;
+            }
+          }
+
+          .auction-card__party__player__name {
+            font-size: 18px;
+            flex: 0 0 auto;
+          }
+        }
+      }
+    }
+}

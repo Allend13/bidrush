@@ -1,0 +1,48 @@
+@import '~less/variables.less';
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0; right: 0;
+    padding: 0 @grid-margin 0 @grid-margin;
+    height: @header-height;
+    color: white;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.5), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    z-index: 50;
+    text-align: right;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--chat-is-open {
+        right: @chat-width;
+    }
+
+    &__nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &__btn {
+        margin-left: 12px;
+        background-position: center center;
+        background-size: 24px auto;
+        background-repeat: no-repeat;
+
+        &--music {
+            background-image: url('./assets/music.svg');
+            background-size: 20px auto;
+        }
+
+        &--menu-toggle {
+            background-image: url('./assets/menu.svg');
+        }
+
+        &--chat {
+            background-image: url('./assets/ic-chat-white-24-px.svg');
+        }
+    }
+
+}

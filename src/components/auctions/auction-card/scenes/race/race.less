@@ -1,0 +1,112 @@
+@import '~less/variables.less';
+
+.auction-card--race {
+  .auction-card {
+    &__status {
+
+      &__progress {
+        &__amount {
+          font-size: 20px;
+          line-height: 1;
+        }
+
+        .progress-circle {
+          margin-top: 2px;
+        }
+      }
+
+      &__stage {
+        font-size: 16px;
+        color: @gray-light;
+        margin-left: @grid-margin;
+        line-height: 1;
+      }
+    }
+
+    &__race-kenny {
+      margin: @grid-margin 0;
+    }
+  }
+}
+
+.auction-card__actions {
+  &__race {
+    &__info {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 24px;
+      line-height: 1;
+      margin-right: @grid-margin;
+      padding-left: @grid-margin;
+
+      > hr {
+        margin-left: -@grid-margin;
+      }
+
+
+      &__label {
+        font-size: 10px;
+        color: @gray-light;
+        margin-bottom: 5px;
+      }
+
+      &__timer {
+        color: @red;
+      }
+
+      &__bids-left {
+        margin-top: @grid-margin/2;
+      }
+    }
+
+    &__bid {
+      @bid-btn-size: 100px;
+      width: @bid-btn-size;
+      height: @bid-btn-size;
+      margin-right: @grid-margin;
+      position: relative;
+
+      >.progress-circle {
+        position: absolute;
+        left: -7.5px;
+        top: -8.5px;
+      }
+
+      &__btn {
+        position: absolute;
+        width: @bid-btn-size;
+        height: @bid-btn-size;
+        left: 0; top: 0;
+        display: block;
+        border-radius: 50%;
+        background-image: radial-gradient(circle at 50% 0, #6bb1ff, #1862b8);
+        font-size: 15px;
+        z-index: 0;
+
+        &:after {
+          @offset: 5px;
+          @after-size: @bid-btn-size - @offset*2;
+          content: '';
+          position: absolute;
+          width: @after-size;
+          height: @after-size;
+          left: @offset; top: @offset;
+          background-color: @blue;
+          border-radius: 50%;
+          z-index: -5;
+        }
+
+        &[disabled] {
+          background-image: radial-gradient(circle at 50% 2%, #a5a9b5, #6c717d);
+          
+          &:after {
+            background-color: @gray-light;
+          }
+        }
+      }
+    }
+  }
+}

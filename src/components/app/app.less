@@ -1,0 +1,43 @@
+@import '~less/variables.less';
+
+.app {
+
+    &-container {
+        width: @grid-width+@grid-margin*2;
+        height: @layout-height;
+        background: @brand-gray;
+        padding: 0 @grid-margin;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        box-shadow: @base-box-shadow;
+
+        &--devtool {
+            margin: 0;
+            margin-left: @grid-margin;
+        }
+    }
+
+    &-view {
+        position: absolute;
+        top: @header-height;
+        left: @grid-margin; right: @grid-margin;
+        bottom: @footer-height;
+        z-index: 0;
+        transition: right 0.15s ease-in-out 0.15s;
+
+        &--chat-is-open {
+            right: @chat-width;
+        }
+
+        &--auth {
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 0; right: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

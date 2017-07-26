@@ -1,0 +1,77 @@
+@import '~less/variables.less';
+
+.auction-card__party {
+  @img-size: 25px;
+  display: flex;
+  flex-direction: column;
+  margin-top: @grid-margin+5px;
+  margin-bottom: @grid-margin;
+  flex-wrap: wrap;
+  max-height: @img-size*2+@grid-margin+1;
+  width: 100%;
+
+
+  &__player {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: @gray-light;
+    margin-bottom: @grid-margin/2;
+    font-size: 10px;
+
+    &__img {
+      width: @img-size;
+      height: @img-size;
+      border-radius: 50%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 1px solid #000;
+    }
+
+    &__name {
+      flex: 1 1 auto;
+      margin-left: @grid-margin/2;
+    }
+
+    &:first-of-type {
+      color: @orange;
+    }
+
+    &:first-of-type &__img {
+      border-color: @orange;
+      position: relative;
+
+      @media only screen and (min-resolution: 144dpi) {
+        &:after {
+          content: '';
+          width: 18px;
+          height: 18px;
+          position: absolute;
+          left: -7px;
+          bottom: -4px;
+          background: url('assets/crown-small-badge.svg') no-repeat center center;
+          background-size: cover;
+          z-index: 5;
+        }
+      }
+    }
+
+    &--total &__img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      line-height: 1;
+      border-color: @gray-light;
+      background-image: url('./assets/group-filled.svg');
+      background-size: 18px auto;
+    }
+
+    &:first-of-type &__img {
+      border-color: @orange;
+    }
+
+  }
+}

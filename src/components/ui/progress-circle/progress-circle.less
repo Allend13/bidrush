@@ -1,0 +1,96 @@
+ @import '~less/variables.less';
+
+
+ .generate-progress-segments(@degree) when (@degree<360) {
+     &:nth-child(@{degree}) {
+        transform: rotate(~"@{degree}deg");
+
+     }
+    .generate-progress-segments(@degree + 1);
+ }
+
+.progress-circle {
+    @circle-size: 25px;
+    width: @circle-size;
+    height: @circle-size;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(255, 255, 255, .1);
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+
+    &::after {
+        @progress-bar-line-width: 8px;
+        @overlay-size: @circle-size - @progress-bar-line-width;
+        content: '';
+        background-color: @brand-gray;
+        position: absolute;
+        width: @overlay-size;
+        height: @overlay-size;
+        left: calc(~'50% -' @overlay-size/2);
+        top: calc(~'50% -' @overlay-size/2);
+        border-radius: 50%;
+    }
+
+    &__segment {
+        position: absolute;
+        width: 1px;
+        left: 50%;
+        top: -1px;
+        bottom: 50%;
+        margin-left: -0.5px;
+        margin-bottom: -0.5px;
+        transform-origin: center bottom;
+
+        .generate-progress-segments(0);
+    }
+
+    &--white {
+        background-color: rgba(0, 0, 0, .1);
+
+        &::after {
+            background-color: white;
+        }
+    }
+
+    &--s {
+      @circle-size: 17px;
+      width: @circle-size;
+      height: @circle-size;
+      margin-top: 1px;
+
+      &::after {
+          @progress-bar-line-width: 6px;
+          @overlay-size: @circle-size - @progress-bar-line-width;
+          content: '';
+          background-color: @brand-gray;
+          position: absolute;
+          width: @overlay-size;
+          height: @overlay-size;
+          left: calc(~'50% -' @overlay-size/2);
+          top: calc(~'50% -' @overlay-size/2);
+          border-radius: 50%;
+      }
+    }
+
+    &--lg {
+      @circle-size: 115px;
+      width: @circle-size;
+      height: @circle-size;
+      margin-top: 1px;
+
+      &::after {
+          @progress-bar-line-width: 10px;
+          @overlay-size: @circle-size - @progress-bar-line-width;
+          content: '';
+          background-color: @brand-gray;
+          position: absolute;
+          width: @overlay-size;
+          height: @overlay-size;
+          left: calc(~'50% -' @overlay-size/2);
+          top: calc(~'50% -' @overlay-size/2);
+          border-radius: 50%;
+      }
+    }
+}

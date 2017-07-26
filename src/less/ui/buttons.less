@@ -1,0 +1,62 @@
+@import '~less/variables.less';
+
+.btn {
+    @btn-height: 40px;
+    border-radius: @base-border-radius;
+    text-transform: uppercase;
+    width: 130px;
+    height: @btn-height;
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: 400;
+    border: none;
+    color: white;
+    background: @blue;
+    cursor: pointer;
+    line-height: 1;
+    transition: opacity 0.15s ease-out;
+    outline: none;
+
+    &--square {
+        width: @btn-height;
+    }
+
+    &-blue-dark {
+        background: @blue-dark;
+    }
+
+    &--red {
+        background-color: @red;
+    }
+
+    &--gray {
+        background-color: @brand-gray-dark;
+    }
+
+    &--black {
+        background-color: black;
+    }
+
+    &--shadow {
+        box-shadow: @base-box-shadow;
+    }
+
+    &:hover {
+        opacity: 0.85;
+    }
+
+    a& {
+        text-align: center;
+        text-decoration: none;
+        line-height: @btn-height;
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+        background-color: @gray-light;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

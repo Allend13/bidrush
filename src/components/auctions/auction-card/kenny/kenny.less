@@ -1,0 +1,87 @@
+@import '~less/variables.less';
+@import '~less/layout/helpers.less';
+
+.kenny {
+    .clearfix;
+    @img-size: 24px;
+
+    &__img {
+        width: @img-size;
+        height: @img-size;
+        margin-top: 1px;
+        float: left;
+        background-image: url('./assets/kenny.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100%;
+        position: relative;
+        z-index: 20;
+    }
+
+    &__msg {
+        @msg-height: 35px;
+        width: 210px;
+        float: right;
+        font-size: 14px;
+        font-family: @lato;
+        border-radius: @base-border-radius;
+        vertical-align: middle;
+        padding: @grid-margin/2;
+        background-color: @gray-light;
+        color: white;
+        font-weight: 400;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+        position: relative;
+        z-index: 15;
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: @grid-margin;
+        }
+
+        &::after {
+            background-color: @gray-light;
+            height: @grid-margin;
+            left: -@grid-margin/2;
+            top: 0;
+            z-index: 5;
+        }
+
+        &::before {
+            background-color: @brand-gray;
+            height: @img-size;
+            top: -1px;
+            left: -@img-size;
+            width: @img-size;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        &--yellow {
+            background-color: @orange;
+            color: @brand-gray-dark;
+
+            &:after {
+                background-color: @orange;
+            }
+        }
+
+        &--red {
+            background-color: @red;
+
+            &:after {
+                background-color: @red;
+            }
+        }
+
+        &--blue {
+            background-color: @blue;
+
+            &:after {
+                background-color: @blue;
+            }
+        }
+    }
+}

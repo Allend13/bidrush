@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="284px" height="87px" viewBox="0 0 284 87" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>5EDBAD56-81CB-4431-8E83-73057EC1CC43</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="248.649254" height="74.5849057" rx="4"></rect>
+        <text id="text-3" font-family="Roboto-Black, Roboto" font-size="18.88" font-weight="700" fill="#FFFFFF">
+            <tspan x="52.7956367" y="34.1244444">CONGRATULATIONS!</tspan>
+            <tspan x="97.1286054" y="59.1244444">YOU WON!</tspan>
+        </text>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Facebook" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="main-1000-win" transform="translate(-235.000000, -87.000000)">
+            <g id="Group-6" transform="translate(227.000000, 87.000000)">
+                <g id="winNot" transform="translate(7.000000, 0.000000)">
+                    <g id="lenta-red">
+                        <path d="M11.419883,50.7770297 L1.13147912,15.8420183 C0.506580458,13.7201302 1.79291122,12 4.00672201,12 L43,12 L43,87 L4.00672201,87 C1.79387055,87 0.535487567,85.3014756 1.2005434,83.1919708 L11.419883,50.7770297 Z" id="Rectangle-1272" fill="#EA5245"></path>
+                        <path d="M253.446237,50.7770297 L243.157833,15.8420183 C242.532935,13.7201302 243.819265,12 246.033076,12 L285.026354,12 L285.026354,87 L246.033076,87 C243.820225,87 242.561842,85.3014756 243.226897,83.1919708 L253.446237,50.7770297 Z" id="Rectangle-1272" fill="#EA5245" transform="translate(264.013177, 49.500000) scale(-1, 1) translate(-264.013177, -49.500000) "></path>
+                        <path d="M266,11.4783456 C266,9.26417038 264.215707,7.80606954 262.009947,8.22247776 L243,12 L243,87 L266,72.7388279 L266,11.4783456 Z" id="Rectangle-1272" fill="#CD4438"></path>
+                        <path d="M43,11.4783456 C43,9.26417038 41.2157067,7.80606954 39.009947,8.22247776 L20,12 L20,87 L43,72.7388279 L43,11.4783456 Z" id="Rectangle-1272" fill="#CD4438" transform="translate(31.500000, 47.575744) scale(-1, 1) translate(-31.500000, -47.575744) "></path>
+                        <g id="Group-7" transform="translate(18.000000, 0.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Mask" fill="#FD685B" xlink:href="#path-1"></use>
+                            <path d="M8.11993073,-76.5318784 L31.0639606,-76.5318784 L31.0639606,138.030279 L8.11993073,138.030279 L8.11993073,-76.5318784 Z M55.6087367,-76.5318784 L70.5490352,-76.5318784 L70.5490352,138.030279 L55.6087367,138.030279 L55.6087367,-76.5318784 Z M224.220677,-76.5318784 L239.160976,-76.5318784 L239.160976,138.030279 L224.220677,138.030279 L224.220677,-76.5318784 Z M177.799035,-76.5318784 L192.739334,-76.5318784 L192.739334,138.030279 L177.799035,138.030279 L177.799035,-76.5318784 Z M215.683364,-76.5318784 L220.485602,-76.5318784 L220.485602,138.030279 L215.683364,138.030279 L215.683364,-76.5318784 Z M137.246796,-76.5318784 L143.116199,-76.5318784 L143.116199,138.030279 L137.246796,138.030279 L137.246796,-76.5318784 Z M33.731871,-76.5318784 L39.601274,-76.5318784 L39.601274,138.030279 L33.731871,138.030279 L33.731871,-76.5318784 Z M74.8176919,-76.5318784 L117.504259,-76.5318784 L117.504259,138.030279 L74.8176919,138.030279 L74.8176919,-76.5318784 Z" id="Combined-Shape" fill="#FF4636" mask="url(#mask-2)" transform="translate(123.640453, 30.749200) rotate(-27.000000) translate(-123.640453, -30.749200) "></path>
+                        </g>
+                    </g>
+                    <g id="CONGRATULATIONS!" fill-opacity="1" fill="#FFFFFF">
+                        <use filter="url(#filter-4)" xlink:href="#text-3"></use>
+                        <use xlink:href="#text-3"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

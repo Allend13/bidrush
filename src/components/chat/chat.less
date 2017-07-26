@@ -1,0 +1,163 @@
+@import '~less/variables.less';
+
+.chat--transition-enter {
+  opacity: 0.01;
+}
+
+.chat--transition-enter.chat--transition-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.chat {
+    width: @chat-width;
+    position: absolute;
+    right: -@chat-width;
+    top: 0; bottom: @footer-height;
+    z-index: 10;
+    background-color: @brand-gray-dark;
+    color: white;
+    padding: @grid-margin;
+    z-index: 100;
+    transition: right 0.3s ease-in-out;
+    overflow: hidden;
+
+    &--is-open {
+        right: 0;
+    }
+
+    &__log {
+        position: absolute;
+        left: @grid-margin; right: @grid-margin;
+        top: @grid-margin; bottom: 70px;
+        overflow: hidden;
+    }
+
+    &__msg {
+        width: 100%;
+        margin-bottom: @grid-margin*1.5;
+
+        &__sender {
+            @sender-bar: 26px;
+            .clearfix();
+            height: @sender-bar;
+            position: relative;
+            margin-bottom: @grid-margin/2;
+
+            &__img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: @sender-bar;
+                height: @sender-bar;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: 10px;
+                z-index: 15;
+
+                >img {
+                    width: 100%;
+                }
+            }
+
+            &__name {
+                position: absolute;
+                bottom: 0;
+                left: @sender-bar + 10px;
+                line-height: @sender-bar;
+                color: @gray-light;
+            }
+        }
+
+        &__text {
+            display: inline-block;
+            padding: @grid-margin;
+            border-radius: @base-border-radius;
+            padding: @grid-margin;
+            padding-right: @grid-margin*2;
+            color: @gray;
+            background: white;
+            position: relative;
+            min-width: 100px;
+
+            &::after, &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: @grid-margin;
+            }
+
+            &::after {
+                background-color: white;
+                height: @grid-margin;
+                top: -@grid-margin/2;
+                z-index: 5;
+            }
+
+            &::before {
+                background-color: @brand-gray-dark;
+                height: @grid-margin*2;
+                left: -1px;
+                top: -@grid-margin*2;
+                width: @grid-margin*2;
+                border-radius: @grid-margin;
+                z-index: 10;
+            }
+
+            &--me {
+                color: white;
+                background: @blue;
+
+                &::after {
+                    background-color: @blue;
+                }
+            }
+
+            &--bot {
+                background: @red;
+            }
+        }
+
+        &--groupped {
+            .chat__msg {
+
+                &__sender {
+                    display: none;
+                }
+
+                &__text {
+                    margin-top: -@grid-margin;
+
+                    &::after, &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+
+    &__input {
+        position: absolute;
+        left: 0; right: 0;
+        bottom: 0;
+        background-color: @brand-gray-dark;
+        padding: @grid-margin @grid-margin/2;
+
+        &__text-field {
+            display: block;
+            width: 100%;
+            height: 50px;
+            background-color: @brand-gray;
+            color: @brand-gray-light;
+            border: none;
+            padding: 0 @grid-margin;
+            vertical-align: middle;
+            font-size: 14px;
+            border-radius: @base-border-radius;
+        }
+    }
+
+}

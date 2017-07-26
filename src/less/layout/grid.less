@@ -1,0 +1,26 @@
+@import '~less/variables.less';
+
+//GRID GENERATING
+.row {
+    margin: 0 -@grid-margin/2;
+    .clearfix();
+}
+
+.make-grid(@n) when not(@n=0) {
+    // COLS
+    @{col-selector}@{n} {
+        float: left;
+        width: (@grid-col-with+@grid-margin)*@n;
+        padding-left: @grid-margin/2;
+        padding-right: @grid-margin/2;
+    }
+    //OFFSETS
+    @{col-selector}offset-@{n} {
+        margin-left: @grid-width/@grid-columns*@n;
+    }
+
+    .make-grid(@n - 1);
+}
+
+// GRID INIT
+.make-grid(@grid-columns);

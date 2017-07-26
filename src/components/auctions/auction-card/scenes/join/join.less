@@ -1,0 +1,44 @@
+@import '~less/variables.less';
+
+.auction-card--join {
+  .auction-card {
+    &__status {
+      padding: @grid-margin/2 0;
+      justify-content: center;
+
+      &__item-price, &__progress {
+        line-height: 1.4;
+
+        &__amount {
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+
+      &__item-price {
+        margin-left: -@grid-margin;
+      }
+
+      &__progress {
+        margin-left: @grid-margin*2;
+      }
+    }
+
+    &__item {
+      &__status {
+        padding: @grid-margin/2 0;
+      }
+
+      &__price {
+        font-size: 18px;
+        line-height: 20px;
+        color: white;
+      }
+
+      &__description > div {
+        height: 150px;
+      }
+    }
+  }
+
+}

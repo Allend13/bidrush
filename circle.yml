@@ -1,0 +1,31 @@
+machine:
+  timezone:
+    US/Pacific
+
+  node:
+    version:
+      5.1.0
+
+dependencies:
+  cache_directories:
+    - ../node_modules
+  pre:
+    - if [[ ! -d ../node_modules ]]; then mkdir ../node_modules; fi
+    - if [[ ! -L node_modules ]]; then ln -s ../node_modules node_modules; fi
+    - npm config set registry http://registry.npmjs.org/
+  override:
+    - npm install
+  post:
+    - if [[ "$CIRCLE_BRANCH" == 'master' ]]; then npm run build-prod; else npm run build-dev; fi
+
+deployment:
+  staging:
+    branch: develop
+    codedeploy:
+      BidWinUser:
+        deployment_group: staging-instance-group
+  production:
+    branch: master
+    codedeploy:
+      BidWinUser:
+        deployment_group: production-instance-group

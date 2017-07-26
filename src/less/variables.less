@@ -1,0 +1,49 @@
+//COLORS
+@brand-gray: #282d39;
+@brand-gray-dark: #191c23;
+@brand-gray-light: #888f9f;
+@blue: #0076ff;
+@blue-dark: #264989;
+@red: #ff4636;
+@gray: #333333;
+@gray-light: #8a91a2;
+@gray-lightest: #dfe1e6;
+@orange: #ffc50e;
+
+//DIMENSIONS
+@layout-height: 700px;
+@base-border-radius: 4px;
+@footer-height: 60px;
+@chat-width: (@grid-col-with + @grid-margin)*3;
+
+//GRID
+@grid-col-with: 72.5px;
+@grid-margin: 10px;
+@grid-columns: 12;
+@grid-width: ((@grid-col-with + @grid-margin)*@grid-columns) - @grid-margin;
+@col-selector: ~".col-";
+
+//FONTS
+@lato: 'Lato', sans-serif;
+@roboto: 'Roboto', sans-serif;
+
+//ELEMENTS
+@header-height: 62px;
+@header-margin-top: 21px;
+@header-offset-top: @header-height + @header-margin-top;
+
+//SHADOW
+@base-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+
+
+//MIXINS
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
